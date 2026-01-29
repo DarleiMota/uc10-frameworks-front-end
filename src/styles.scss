@@ -1,4 +1,3 @@
-
 // Include theming for Angular Material with `mat.theme()`.
 // This Sass mixin will define CSS variables that are used for styling Angular Material
 // components according to the Material 3 design spec.
@@ -36,3 +35,30 @@ body {
   height: 100%;
 }
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --gm-card: #0C111B; // fundo do card
+  --gm-field-bg: #101622; // fundo do input
+  --gm-field-border: #5A606C; // borda do input
+  --gm-text: #FFFFFF; // cor do texto
+  --gm-button-bg: #0D57ED; // fundo do botão
+
+  --gm-font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  --gm-size-title: 24px; 
+  --gm-size-input: 16px;
+  --gm-size-forgot: 10px;
+  --gm-size-button: 16px;
+  --gm-size-signup: 16px;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--gm-font);
+  color: var(--gm-text);
+  background: #101622; // fundo da página (ajusta se quiser)
+}

@@ -1,0 +1,107 @@
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.card {
+    width: 100%;
+    max-width: 538px;
+    padding: 20px 50px;
+    background: var(--gm-card);
+    color: var(--gm-text);
+}
+
+.title {
+    font-size: var(--gm-size-title);
+    font-weight: 600; // semibold
+    text-align: center;
+    margin: 0 0 32px 0;
+    font-family: var(--gm-font);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.field {
+    width: 100%;
+}
+
+/* Texto dentro dos inputs + label */
+:host ::ng-deep .mat-mdc-form-field input.mdc-text-field__input {
+    font-size: var(--gm-size-input);
+    color: var(--gm-text);
+    font-family: var(--gm-font);
+}
+
+/* Label */
+:host ::ng-deep .mat-mdc-form-field .mdc-floating-label {
+    color: var(--gm-text);
+    font-family: var(--gm-font);
+}
+
+/* Fundo do input (MDC) */
+:host ::ng-deep .mat-mdc-text-field-wrapper {
+    background: var(--gm-field-bg);
+}
+
+/* Borda do outline */
+:host ::ng-deep .mdc-notched-outline__leading,
+:host ::ng-deep .mdc-notched-outline__notch,
+:host ::ng-deep .mdc-notched-outline__trailing {
+    border-color: var(--gm-field-border) !important;
+}
+
+/* Foco: manter a borda na mesma cor (se quiser outra, troca aqui) */
+:host ::ng-deep .mat-mdc-form-field.ng-invalid.ng-touched .mdc-notched-outline__leading,
+:host ::ng-deep .mat-mdc-form-field.ng-invalid.ng-touched .mdc-notched-outline__notch,
+:host ::ng-deep .mat-mdc-form-field.ng-invalid.ng-touched .mdc-notched-outline__trailing {
+    border-color: var(--gm-font) !important;
+}
+
+:host ::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
+:host ::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__notch,
+:host ::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing {
+    border-color: var(--gm-field-border) !important;
+}
+
+.signup-minitext {
+    font-size: var(--gm-size-forgot);
+    font-weight: 400;
+    margin-top: -32px;
+    font-family: var(--gm-font);
+}
+
+.signup-text {
+    font-size: var(--gm-size-signup);
+    font-weight: 400;
+    text-align: center;
+    font-family: var(--gm-font);
+}
+
+/* Links brancos */
+.signup-minitext a,
+.signup-text a {
+    color: var(--gm-text);
+    text-decoration: none;
+}
+
+.signup-minitext a:hover,
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 230px;
+    height: 44px;
+    border-radius: 5px;
+    margin: 0 auto;
+    font-size: var(--gm-size-button);
+    font-weight: 600;
+    font-family: var(--gm-font);
+}
