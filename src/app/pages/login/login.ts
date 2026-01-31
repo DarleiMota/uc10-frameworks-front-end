@@ -25,6 +25,7 @@ import { M } from '@angular/cdk/keycodes';
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })
+
 export class Login {
   
   loginForm = new FormGroup({
@@ -32,6 +33,7 @@ export class Login {
       Validators.required, 
       Validators.email
     ]),
+    
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(6)

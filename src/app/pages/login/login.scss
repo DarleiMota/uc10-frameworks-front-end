@@ -1,3 +1,22 @@
+:host {
+    /* Inputs (Material MDC - outlined) */
+    --mdc-outlined-text-field-container-color: var(--input-bg);
+    --mdc-outlined-text-field-outline-color: var(--input-border);
+    --mdc-outlined-text-field-focus-outline-color: var(--input-border);
+    --mdc-outlined-text-field-label-text-color: var(--text-color);
+    --mdc-outlined-text-field-input-text-color: var(--text-color);
+    --mdc-outlined-text-field-caret-color: var(--text-color);
+
+    /* Botão (Mat Raised / Protected Button) */
+    --mdc-protected-button-container-color: #0D57ED;
+    --mdc-protected-button-label-text-color: #FFFFFF;
+}
+
+:host ::ng-deep .btn.mat-mdc-raised-button {
+    background-color: #0D57ED !important;
+    color: #FFFFFF !important;
+}
+
 .page {
     min-height: 100vh;
     display: flex;
@@ -10,16 +29,16 @@
     width: 100%;
     max-width: 538px;
     padding: 20px 50px;
-    background: var(--gm-card);
-    color: var(--gm-text);
+    background: var(--card-bg);
+    color: var(--text-color);
+    font-family: var(--font-main);
 }
 
 .title {
-    font-size: var(--gm-size-title);
-    font-weight: 600; // semibold
+    font-size: var(--title-size);
+    font-weight: 600;
     text-align: center;
     margin: 0 0 32px 0;
-    font-family: var(--gm-font);
 }
 
 .content {
@@ -32,62 +51,58 @@
     width: 100%;
 }
 
-/* Texto dentro dos inputs + label */
+/* ===== Angular Material (inputs) ===== */
+
+/* Texto digitado */
 :host ::ng-deep .mat-mdc-form-field input.mdc-text-field__input {
-    font-size: var(--gm-size-input);
-    color: var(--gm-text);
-    font-family: var(--gm-font);
+    font-size: var(--input-text-size);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    caret-color: var(--text-color);
 }
 
 /* Label */
 :host ::ng-deep .mat-mdc-form-field .mdc-floating-label {
-    color: var(--gm-text);
-    font-family: var(--gm-font);
+    color: var(--text-color);
+    font-family: var(--font-main);
 }
 
-/* Fundo do input (MDC) */
+/* Fundo do input */
 :host ::ng-deep .mat-mdc-text-field-wrapper {
-    background: var(--gm-field-bg);
+    background: var(--input-bg);
 }
 
-/* Borda do outline */
+/* Borda padrão */
 :host ::ng-deep .mdc-notched-outline__leading,
 :host ::ng-deep .mdc-notched-outline__notch,
 :host ::ng-deep .mdc-notched-outline__trailing {
-    border-color: var(--gm-field-border) !important;
+    border-color: var(--input-border) !important;
 }
 
-/* Foco: manter a borda na mesma cor (se quiser outra, troca aqui) */
-:host ::ng-deep .mat-mdc-form-field.ng-invalid.ng-touched .mdc-notched-outline__leading,
-:host ::ng-deep .mat-mdc-form-field.ng-invalid.ng-touched .mdc-notched-outline__notch,
-:host ::ng-deep .mat-mdc-form-field.ng-invalid.ng-touched .mdc-notched-outline__trailing {
-    border-color: var(--gm-font) !important;
-}
-
+/* Foco */
 :host ::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
 :host ::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__notch,
 :host ::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing {
-    border-color: var(--gm-field-border) !important;
+    border-color: var(--input-border) !important;
 }
 
+/* ===== Textos auxiliares ===== */
+
 .signup-minitext {
-    font-size: var(--gm-size-forgot);
+    font-size: var(--small-text-size);
     font-weight: 400;
     margin-top: -32px;
-    font-family: var(--gm-font);
 }
 
 .signup-text {
-    font-size: var(--gm-size-signup);
+    font-size: var(--normal-text-size);
     font-weight: 400;
     text-align: center;
-    font-family: var(--gm-font);
 }
 
-/* Links brancos */
 .signup-minitext a,
 .signup-text a {
-    color: var(--gm-text);
+    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -96,12 +111,38 @@
     text-decoration: underline;
 }
 
+/* ===== Botão ===== */
+
 .btn {
     width: 230px;
     height: 44px;
-    border-radius: 5px;
     margin: 0 auto;
-    font-size: var(--gm-size-button);
+    border-radius: 5px;
+    background-color: #0D57ED;
+    color: #FFFFFF;
+    font-size: var(--normal-text-size);
     font-weight: 600;
-    font-family: var(--gm-font);
+    font-family: var(--font-main);
+    transition: background-color .15s ease, transform .08s ease, filter .15s ease;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        filter: brightness(0.92);
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        transform: translateY(0);
+        filter: brightness(0.86);
+    }
+}
+
+/* Ensures hover for Material button variant (in case global styles use higher specificity) */
+:host ::ng-deep .btn.mat-mdc-raised-button:hover {
+    filter: brightness(0.65) !important;
+}
+
+:host ::ng-deep .btn.mat-mdc-raised-button:active {
+    filter: brightness(0.40) !important;
 }

@@ -1,64 +1,44 @@
-// Include theming for Angular Material with `mat.theme()`.
-// This Sass mixin will define CSS variables that are used for styling Angular Material
-// components according to the Material 3 design spec.
-// Learn more about theming and how to use it for your application's
-// custom components at https://material.angular.dev/guide/theming
+/**
+ * Estilos globais essenciais
+ * - Inclui o tema do Angular Material (variáveis e tokens)
+ * - Define estilos base do documento e variáveis CSS usadas pela aplicação
+ */
 @use '@angular/material' as mat;
 
+/* Aplica o tema do Material (gera variáveis do sistema) */
 html {
   height: 100%;
-  @include mat.theme((
-    color: (
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
+  @include mat.theme((color: (primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    ));
 }
 
+/* Estilos base do documento */
 body {
-  // Default the application to a light color theme. This can be changed to
-  // `dark` to enable the dark color theme, or to `light dark` to defer to the
-  // user's system settings.
   color-scheme: light;
-
-  // Set a default background, font and text colors for the application using
-  // Angular Material's system-level CSS variables. Learn more about these
-  // variables at https://material.angular.dev/guide/system-variables
+  /* esquema de cores: light / dark */
   background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
-
-  // Reset the user agent margin.
   margin: 0;
+  /* reset do browser */
   height: 100%;
 }
-/* You can add global styles to this file, and also import other style files */
 
+/* Variáveis globais usadas pela aplicação */
 :root {
-  --gm-card: #0C111B; // fundo do card
-  --gm-field-bg: #101622; // fundo do input
-  --gm-field-border: #5A606C; // borda do input
-  --gm-text: #FFFFFF; // cor do texto
-  --gm-button-bg: #0D57ED; // fundo do botão
+  --card-bg: #0C111B;
+  --input-bg: #101622;
+  --input-border: #5A606C;
+  --text-color: #FFFFFF;
 
-  --gm-font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-main: "Inter", Arial, sans-serif;
 
-  --gm-size-title: 24px; 
-  --gm-size-input: 16px;
-  --gm-size-forgot: 10px;
-  --gm-size-button: 16px;
-  --gm-size-signup: 16px;
-}
-
-html, body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: var(--gm-font);
-  color: var(--gm-text);
-  background: #101622; // fundo da página (ajusta se quiser)
+  --title-size: 24px;
+  --input-text-size: 16px;
+  --small-text-size: 10px;
+  --normal-text-size: 16px;
 }
