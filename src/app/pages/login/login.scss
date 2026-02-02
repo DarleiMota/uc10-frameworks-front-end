@@ -8,13 +8,13 @@
     --mdc-outlined-text-field-caret-color: var(--text-color);
 
     /* Botão (Mat Raised / Protected Button) */
-    --mdc-protected-button-container-color: #0D57ED;
-    --mdc-protected-button-label-text-color: #FFFFFF;
+    --mdc-protected-button-container-color: var(--button-background-color);
+    --mdc-protected-button-label-text-color: var(--text-color);
 }
 
 :host ::ng-deep .btn.mat-mdc-raised-button {
-    background-color: #0D57ED !important;
-    color: #FFFFFF !important;
+    background-color: var(--mdc-protected-button-container-color) !important;
+    color: var(--mdc-protected-button-label-text-color) !important;
 }
 
 .page {
@@ -124,8 +124,8 @@
     height: 44px;
     margin: 0 auto;
     border-radius: 5px;
-    background-color: #0D57ED;
-    color: #FFFFFF;
+    background-color: var(--button-background-color);
+    color: var(--text-color);
     font-size: var(--normal-text-size);
     font-weight: 600;
     font-family: var(--font-main);

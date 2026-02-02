@@ -1,0 +1,303 @@
+.hero {
+  width: 100%;
+  background-color: var(--input-bg);
+  padding-top: 24px;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 24px;
+
+  padding: 56px 84px;
+  border-radius: 5px;
+
+  background: var(--card-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 10px;
+}
+
+.hero-kicker {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.85;
+  color: var(--button-background-color);
+  font-weight: 500;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: clamp(30px, 3.4vw, 44px);
+  line-height: 1.05;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.hero-subtitle {
+  margin: 0;
+  opacity: 0.85;
+  font-size: 13px;
+  max-width: 42ch;
+  color: var(--text-color);
+}
+
+.hero-cta {
+  width: fit-content;
+  margin-top: 10px;
+  padding: 6px 18px;
+  border-radius: 10px;
+}
+
+.hero-right {
+  display: grid;
+  justify-items: end;
+}
+
+.hero-image-wrap {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  width: fit-content;
+}
+
+.hero-image {
+  display: block;
+  width: min(320px, 100%);
+  height: auto;
+  border-radius: 8px;
+}
+
+.hero-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.dot.active {
+  background: var(--button-background-color);
+}
+
+/* ===== Seção Playstation ===== */
+.ps-section {
+  width: 100%;
+  background-color: var(--input-bg);
+  padding: 24px 0;
+}
+
+/* a grade: card grande + coluna dos pequenos */
+.ps-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1.7fr;
+  gap: 18px;
+}
+
+/* CARD GRANDE (Playstation) */
+.ps-card-large {
+  background: var(--card-bg);
+  border-radius: 6px;
+  padding: 22px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.ps-text {
+  max-width: 320px;
+}
+
+.ps-title-card {
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.ps-description {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.35;
+  opacity: 0.85;
+  color: var(--text-color);
+}
+
+/* imagem do ps5 (no seu print ela fica maior e central na direita) */
+.ps-card-large img {
+  width: 210px;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+/* COLUNA DOS PEQUENOS */
+.ps-card-small {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* card pequeno base */
+.ps-card {
+  background: var(--card-bg);
+  border-radius: 5px;
+  padding: 16px;
+
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* imagem pequena no topo */
+.ps-card img {
+  width: 100%;
+  height: 120px;       /* dá aquele “retângulo” do print */
+  object-fit: contain;
+  display: block;
+  border-radius: 5px;
+}
+
+/* textos pequenos */
+.ps-card-nano {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.ps-description-nano {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.3;
+  opacity: 0.8;
+  color: var(--text-color);
+}
+
+
+/* responsivo */
+@media (max-width: 980px) {
+  .ps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ps-card-small {
+    grid-template-columns: 1fr;
+  }
+
+  .ps-card-large {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ps-card-large img {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* ===== Seção Macbook Air ===== */
+
+.mac-section {
+  width: 100%;
+  background-color: var(--input-bg);
+  padding: 5px 0;
+}
+
+.mac-banner {
+  position: relative;
+  overflow: hidden;
+
+  border-radius: 6px;
+  background: #e7e7e7; /* base clara */
+  min-height: 150px;
+
+  display: flex;
+  align-items: center;
+  padding: 20px 22px;
+}
+
+/* texto à esquerda */
+.mac-left {
+  position: relative;
+  z-index: 2;
+  max-width: 360px;
+}
+
+.mac-title {
+  margin: 0 0 6px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #3a3a3a;
+}
+
+.mac-subtitle {
+  margin: 0 0 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #5b5b5b;
+  opacity: 0.9;
+}
+
+.mac-cta {
+  border-radius: 10px;
+  padding: 6px 16px;
+}
+
+/* imagem do banner ocupando tudo */
+.mac-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* barrinha rosa embaixo, central */
+.mac-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 3px;
+  border-radius: 999px;
+  background: #ff6bb5; /* rosa */
+  z-index: 2;
+}
+
+/* mobile */
+@media (max-width: 900px) {
+  .mac-banner {
+    min-height: 170px;
+  }
+
+  .mac-left {
+    max-width: 280px;
+  }
+
+  .mac-title {
+    font-size: 22px;
+  }
+}
+
+

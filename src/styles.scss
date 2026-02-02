@@ -1,46 +1,46 @@
-/**
- * Estilos globais essenciais
- * - Inclui o tema do Angular Material (variáveis e tokens)
- * - Define estilos base do documento e variáveis CSS usadas pela aplicação
- */
 @use '@angular/material' as mat;
 
-/* Aplica o tema do Material (gera variáveis do sistema) */
 html {
   height: 100%;
-  @include mat.theme((color: (primary: mat.$azure-palette,
-        tertiary: mat.$blue-palette,
-      ),
-      typography: Roboto,
-      density: 0,
-    ));
+  @include mat.theme((
+    color: (
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
 }
 
-/* Estilos base do documento */
 body {
   color-scheme: light;
-  /* esquema de cores: light / dark */
   background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
   margin: 0;
-  /* reset do browser */
   height: 100%;
 }
 
-/* Variáveis globais usadas pela aplicação */
 :root {
   --card-bg: #0C111B;
   --input-bg: #101622;
   --input-border: #5A606C;
   --text-color: #FFFFFF;
+  --button-background-color: #0D57ED;
 
   --font-main: "Inter", Arial, sans-serif;
-  --font-logo: 'Kavoon', cursive;
-  /* usada apenas na logo */
+  --font-logo: "Kavoon", cursive;
 
   --title-size: 24px;
   --input-text-size: 16px;
   --small-text-size: 10px;
   --normal-text-size: 16px;
+  --content-max-width: 1242px;
+}
+
+.container {
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px; /* ajuda no mobile */
 }

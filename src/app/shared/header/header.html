@@ -1,38 +1,39 @@
 <mat-toolbar class="toolbar">
+    <div class="toolbar-inner">
 
-    <!-- ESQUERDA: LOGO -->
-    <div class="left">
-        <span class="logo">GAME MANIA</span>
+        <!-- ESQUERDA: LOGO -->
+        <div class="left">
+            <span class="logo">GAME MANIA</span>
+        </div>
+
+        <!-- CENTRO: MENU -->
+        <div class="center">
+            <nav class="menu">
+                <a class="menu-link" routerLink="/home">Principal</a>
+                <a class="menu-link is-disabled">Sobre</a>
+                <a class="menu-link is-disabled">Contato</a>
+                <a class="menu-link is-disabled">Produtos</a>
+            </nav>
+        </div>
+
+        <!-- DIREITA: BUSCA + ÍCONES -->
+        <div class="right">
+            <mat-form-field class="search" appearance="outline">
+                <mat-icon matPrefix>search</mat-icon>
+                <input matInput placeholder="Busque aqui" />
+            </mat-form-field>
+
+            <button class="icon-btn" mat-icon-button disabled>
+                <mat-icon>favorite_border</mat-icon>
+            </button>
+
+            <button class="icon-btn" mat-icon-button disabled>
+                <mat-icon>shopping_cart</mat-icon>
+            </button>
+
+            <button class="icon-btn login" mat-icon-button routerLink="/login" aria-label="login">
+                <mat-icon>login</mat-icon>
+            </button>
+        </div>
     </div>
-
-    <!-- CENTRO: MENU -->
-    <div class="center">
-        <nav class="menu">
-            <a class="menu-link" routerLink="/home">Principal</a>
-            <a class="menu-link is-disabled">Sobre</a>
-            <a class="menu-link is-disabled">Contato</a>
-            <a class="menu-link is-disabled">Produtos</a>
-        </nav>
-    </div>
-
-    <!-- DIREITA: BUSCA + ÍCONES -->
-    <div class="right">
-        <mat-form-field class="search" appearance="outline">
-            <mat-icon matPrefix>search</mat-icon>
-            <input matInput placeholder="Busque aqui" />
-        </mat-form-field>
-
-        <button class="icon-btn" mat-icon-button disabled>
-            <mat-icon>favorite_border</mat-icon>
-        </button>
-
-        <button class="icon-btn" mat-icon-button disabled>
-            <mat-icon>shopping_cart</mat-icon>
-        </button>
-
-        <button class="icon-btn login" mat-icon-button routerLink="/login" aria-label="login">
-            <mat-icon>login</mat-icon>
-        </button>
-    </div>
-
 </mat-toolbar>
