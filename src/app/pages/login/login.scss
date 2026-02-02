@@ -23,6 +23,12 @@
     align-items: center;
     justify-content: center;
     padding: 24px;
+    background: radial-gradient(
+        circle at top,
+        #101622 0%,
+        #0c111b 90%,
+        #070b14 100%
+    );
 }
 
 .card {
