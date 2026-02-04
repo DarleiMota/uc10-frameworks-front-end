@@ -1,59 +1,88 @@
 # GameMania
 
-Este projeto foi gerado utilizando [Angular CLI](https://github.com/angular/angular-cli) versão 21.1.1.
+Documentação rápida do projeto
 
-## Servidor de desenvolvimento
+## Descrição
+Projeto demonstrativo de e‑commerce (GameMania) criado com Angular, Angular Material e estilos SCSS. Contém páginas de `home`, `login`, componentes compartilhados (header) e assets de imagem.
 
-Para iniciar um servidor de desenvolvimento local, execute:
+---
 
-```bash
-ng serve
-```
+## Pré-requisitos
+- Node.js (>= 18 recomendado)
+- npm (ou yarn)
+- Angular CLI (opcional para gerar artefatos locais)
 
-Assim que o servidor estiver em execução, abra seu navegador e acesse `http://localhost:4200/`. A aplicação recarregará automaticamente sempre que você modificar qualquer um dos arquivos fonte.
-
-## Scaffolding de código
-
-Angular CLI inclui ferramentas poderosas de scaffolding de código. Para gerar um novo componente, execute:
-
-```bash
-ng generate component nome-do-componente
-```
-
-Para uma lista completa dos esquemas disponíveis (como `components`, `directives`, ou `pipes`), execute:
+## Inicialização (desenvolvimento)
+Instale dependências e inicie o servidor dev:
 
 ```bash
-ng generate --help
+npm install
+ng serve -o
 ```
 
-## Construindo
+A aplicação abrirá em `http://localhost:4200/` e recarregará automaticamente em mudanças.
 
-Para construir o projeto execute:
+## Scripts úteis
+- `npm start` / `ng serve` — servidor de desenvolvimento
+- `ng build` — build de produção
+- `ng test` — testes unitários
 
-```bash
-ng build
+---
+
+## Estrutura principal
+- `src/app/pages/` — páginas da aplicação (ex.: `home`, `login`)
+- `src/app/shared/` — componentes compartilhados (ex.: `header`)
+- `src/assets/images/` — imagens e ícones usados no projeto
+- `src/styles.scss` — estilos globais e variáveis
+
+---
+
+## Convenções de layout e estilos
+- Variável global de largura do conteúdo: `--content-max-width` (definida em `:root` em `src/styles.scss`).
+- Classe utilitária `.container` — centraliza o conteúdo e aplica padding lateral consistente com o `toolbar`.
+- Use `.container` em seções (`hero`, `produtos`, `footer`) para manter alinhamento.
+
+Exemplo de uso:
+```html
+<section class="hero">
+  <div class="container">...conteúdo...</div>
+</section>
 ```
 
-Isto compilará seu projeto e armazenará os artefatos de construção no diretório `dist/`. Por padrão, a construção de produção otimiza sua aplicação para performance e velocidade.
+### Header (documentação rápida)
+- Estrutura: `<mat-toolbar class="toolbar"><div class="toolbar-inner">...conteúdo...</div></mat-toolbar>`
+- Blocos: `.left`, `.center`, `.right` (posicione logo, menu e ícones/entrada de busca respectivamente).
+- Campo de busca: tem ícone prefix (`matPrefix`) e comportamento responsivo (escondido em telas muito pequenas).
 
-## Executando testes unitários
+---
 
-Para executar testes unitários com o executor de testes [Vitest](https://vitest.dev/), use o seguinte comando:
+## Assets / Imagens
+- As imagens ficam em `src/assets/images/`.
+- O build foi configurado (`angular.json`) para copiar `src/assets` para `/assets` no output, então referencie imagens assim:
 
-```bash
-ng test
+```html
+<img src="assets/images/arquivo.png" alt="..." />
 ```
 
-## Executando testes end-to-end
+Se uma imagem não aparecer, verifique se ela existe na pasta e reinicie o dev server (ou force reload).
 
-Para testes end-to-end (e2e), execute:
+---
 
-```bash
-ng e2e
-```
+## Fonts
+- A fonte da logo (`Kavoon`) foi adicionada via `<link>` em `src/index.html`. Para alterar a fonte da logo edite esse arquivo ou a variável CSS `--font-logo` em `:root`.
 
-Angular CLI não inclui um framework de testes end-to-end por padrão. Você pode escolher um que se adeque às suas necessidades.
+---
 
-## Recursos Adicionais
+## Boas práticas de commit
+- Mensagens concisas e descritivas, ex: `feat(home): adicionar hero` ou `chore(styles): atualizar variáveis`.
+- Se precisar abrir PRs, prefira branches curtas e específicas por recurso.
 
-Para mais informações sobre como usar o Angular CLI, incluindo referências de comando detalhadas, visite a página [Visão Geral do Angular CLI e Referência de Comandos](https://angular.dev/tools/cli).
+---
+
+## Como contribuir / revisar
+1. Faça alterações em uma branch com nome descritivo
+2. Rode `npm install` e `ng serve` localmente
+3. Faça commits pequenos e atômicos
+4. Abra PR e solicite revisão
+
+

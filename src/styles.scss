@@ -2,14 +2,12 @@
 
 html {
   height: 100%;
-  @include mat.theme((
-    color: (
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
+  @include mat.theme((color: (primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    ));
 }
 
 body {
@@ -42,5 +40,13 @@ body {
   max-width: var(--content-max-width);
   width: 100%;
   margin: 0 auto;
-  padding: 0 16px; /* ajuda no mobile */
+  padding: 0 24px;
+  /* mantém o mesmo padding lateral do toolbar */
+}
+
+/* menor padding para telas muito pequenas */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
 }
